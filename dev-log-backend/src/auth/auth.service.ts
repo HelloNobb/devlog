@@ -11,7 +11,6 @@ import { User } from '../entities/user.entity';
 import { LoginDto } from './dto/login.dto';
 import { SignupDto } from './dto/signup.dto';
 import { Repository } from 'typeorm';
-import { access } from 'fs';
 
 @Injectable()
 export class AuthService {
@@ -71,7 +70,8 @@ export class AuthService {
 	}
 
 	/* 로그인 */
-	async login(email: string, pwd: string){
+	async login(loginDto: LoginDto){
+		const { email, pwd } = loginDto;
 
 		// 1: 유저 정보 존재 확인 ========
 		const user = await this.userService.findByEmail(email);
@@ -93,8 +93,24 @@ export class AuthService {
 		}; // -> jwt 토큰에 담을 데이터
 
 		return {
-			access_token: this.jwtService.sign(payload), // payLoad를 JWT 토큰으로 암호화
+			accessToken: this.jwtService.sign(payload), // payLoad를 JWT 토큰으로 암호화
 			// 생성된 토큰 형식: "header.payload.signature" / > 이 토큰 받아서 클라는 쿠키에 저장해야함
 		};
+	}
+
+	async getProfile(userId: number){
+		// userId로 사용자 찾기
+		const user = await this.userRepository.findOne({
+			where: { id: userId }
+		});
+
+		if (!user){
+			throw new UnauthorizedException('사용자를 찾을 수 없습니다.');
+		}
+
+		// 비밀번호 제외하고 반환
+		const { pwd, ...userWithoutPwd } = user;
+
+		return userWithoutPwd;
 	}
 }
