@@ -15,7 +15,7 @@ export class AuthController{
 		// : dto에서 이미 입력값 검증받고 옴
 		return this.authService.login(loginDto.email, loginDto.pwd);
 	}
-
+	// Guard: 라우트 접근 제어 - (요청 > 가드 > 컨트롤러 순)
 	@UseGuards(JwtAuthGuard) // 이 데코레이터가 있으면 요청 전에 JWT 검증 실행 (검증 실패 시 401 Unauthorized 에러 자동 반환)====
 	@Get('profile')
 	getProfile(@Request() req){
