@@ -29,7 +29,7 @@ export class AuthService {
 		const payload = { // 민감한 정보 X
 			sub: user.id, // jwt 표준 필드, 토큰 주체 (유저 ID)
 			email: user.email,
-		};
+		}; // -> jwt 토큰에 담을 데이터
 
 		return {
 			access_token: this.jwtService.sign(payload), // payLoad를 JWT 토큰으로 암호화
