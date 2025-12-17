@@ -6,6 +6,10 @@ import LoginPage from './pages/LoginPage';
 import SignupPage from './pages/SignupPage';
 import DashboardPage from './pages/DashboardPage';
 import CsLogPage from './pages/CsLogPage'; // CS 학습 페이지 추가
+import AlgorithmPage from './pages/AlgorithmPage'; // 알고리즘 페이지 추가
+import ProjectPage from './pages/ProjectPage'; // 프로젝트 페이지 추가
+import TroubleshootPage from './pages/TroubleshootPage'; // 트러블슈팅 페이지 추가
+import CalendarPage from './pages/CalendarPage'; // 캘린더 페이지 추가
 import './App.css';
 
 // ==== 로그인 필요한 페이지 보호 컴포넌트 ====
@@ -78,51 +82,39 @@ function AppRoutes() {
           </ProtectedRoute>
         }
       />
+      {/* 알고리즘 페이지 */}
       <Route
         path="/algorithms"
         element={
           <ProtectedRoute>
-            <div style={{ padding: '40px', color: 'white', background: '#0f0f23', minHeight: '100vh' }}>
-              <h1>💻 알고리즘 페이지</h1>
-              <p>구현 예정</p>
-              <a href="/" style={{ color: '#6366f1' }}>← 대시보드로 돌아가기</a>
-            </div>
+            <AlgorithmPage />
           </ProtectedRoute>
         }
       />
+      {/* 프로젝트 페이지 */}
       <Route
         path="/projects"
         element={
           <ProtectedRoute>
-            <div style={{ padding: '40px', color: 'white', background: '#0f0f23', minHeight: '100vh' }}>
-              <h1>🛠️ 프로젝트 페이지</h1>
-              <p>구현 예정</p>
-              <a href="/" style={{ color: '#6366f1' }}>← 대시보드로 돌아가기</a>
-            </div>
+            <ProjectPage />
           </ProtectedRoute>
         }
       />
+      {/* 트러블슈팅 페이지 */}
       <Route
         path="/troubleshoots"
         element={
           <ProtectedRoute>
-            <div style={{ padding: '40px', color: 'white', background: '#0f0f23', minHeight: '100vh' }}>
-              <h1>🔧 트러블슈팅 페이지</h1>
-              <p>구현 예정</p>
-              <a href="/" style={{ color: '#6366f1' }}>← 대시보드로 돌아가기</a>
-            </div>
+            <TroubleshootPage />
           </ProtectedRoute>
         }
       />
+      {/* 캘린더 페이지 */}
       <Route
         path="/calendar"
         element={
           <ProtectedRoute>
-            <div style={{ padding: '40px', color: 'white', background: '#0f0f23', minHeight: '100vh' }}>
-              <h1>📅 캘린더 페이지</h1>
-              <p>구현 예정</p>
-              <a href="/" style={{ color: '#6366f1' }}>← 대시보드로 돌아가기</a>
-            </div>
+            <CalendarPage />
           </ProtectedRoute>
         }
       />
