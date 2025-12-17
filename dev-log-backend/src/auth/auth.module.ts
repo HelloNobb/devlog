@@ -4,6 +4,7 @@ import { JwtModule, JwtModuleOptions } from '@nestjs/jwt';
 import { PassportModule } from '@nestjs/passport';
 // made-from-me
 import { User } from '../entities/user.entity';
+import { UserModule } from '../user/user.module';
 import { JwtStrategy } from './jwt.strategy';
 import { AuthController } from './auth.controller';
 import { AuthService } from './auth.service';
@@ -11,12 +12,12 @@ import { AuthService } from './auth.service';
 import { ConfigModule, ConfigService } from '@nestjs/config';
 import { SignOptions } from 'jsonwebtoken';
 
-// #region agent log
 fetch('http://127.0.0.1:7242/ingest/d0d11f2a-37bf-4c1b-8762-ce966226aadc', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ location: 'auth.module.ts:7', message: 'AuthModule decorator executing', data: { importsCount: 0, hasUserModule: false }, timestamp: Date.now(), sessionId: 'debug-session', runId: 'run1', hypothesisId: 'B' }) }).catch(() => { });
-// #endregion
+
 
 @Module({
 	imports: [
+		UserModule,
 		TypeOrmModule.forFeature([User]), //User Entity를 이 모듈에서 사용할 수 있게 등록
 		PassportModule.register({ defaultStrategy: 'jwt' }), //Passport 라이브러리를 사용하겠다고 등록
 		JwtModule.registerAsync({
