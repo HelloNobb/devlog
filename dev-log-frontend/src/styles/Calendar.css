@@ -1,89 +1,88 @@
-/* Calendar.css - 캘린더 페이지 스타일 (밝은 테마) */
+/* Calendar.css - 세련된 다크 테마 */
 
 .calendar-container {
     display: flex;
     flex-direction: column;
-    gap: 20px;
+    gap: 16px;
 }
 
 .calendar-header {
-    background: white;
+    background: #1a1a1a;
     border-radius: 12px;
-    padding: 20px 24px;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+    padding: 18px 22px;
+    border: 1px solid rgba(255, 255, 255, 0.06);
 }
 
 .calendar-header h1 {
-    font-size: 1.25rem;
-    font-weight: 700;
-    color: #1f2937;
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: #fff;
     margin: 0;
 }
 
-/* 월 네비게이션 */
 .month-navigation {
     display: flex;
     justify-content: center;
     align-items: center;
-    gap: 24px;
-    background: white;
+    gap: 20px;
+    background: #1a1a1a;
     border-radius: 12px;
-    padding: 16px;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+    padding: 14px;
+    border: 1px solid rgba(255, 255, 255, 0.06);
 }
 
 .month-navigation button {
-    padding: 8px 16px;
-    background: #f3f4f6;
+    padding: 6px 14px;
+    background: rgba(255, 255, 255, 0.06);
     border: none;
     border-radius: 6px;
-    color: #374151;
-    font-size: 0.875rem;
+    color: #94a3b8;
+    font-size: 0.8rem;
     cursor: pointer;
 }
 
 .month-navigation button:hover {
-    background: #e5e7eb;
+    background: #fff;
+    color: #0f0f0f;
 }
 
 .month-navigation h2 {
-    font-size: 1.125rem;
-    font-weight: 600;
-    color: #1f2937;
+    font-size: 1rem;
+    font-weight: 500;
+    color: #fff;
     margin: 0;
-    min-width: 120px;
+    min-width: 100px;
     text-align: center;
 }
 
 .today-button {
     align-self: center;
-    padding: 10px 20px;
-    background: linear-gradient(135deg, #4f6af5 0%, #6366f1 100%);
+    padding: 8px 16px;
+    background: #fff;
     border: none;
-    border-radius: 8px;
-    color: white;
-    font-size: 0.875rem;
+    border-radius: 6px;
+    color: #0f0f0f;
+    font-size: 0.8rem;
     font-weight: 600;
     cursor: pointer;
 }
 
-/* 요일 헤더 */
 .weekday-header {
     display: grid;
     grid-template-columns: repeat(7, 1fr);
-    gap: 4px;
-    background: white;
+    gap: 3px;
+    background: #1a1a1a;
     border-radius: 12px;
-    padding: 12px;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+    padding: 10px;
+    border: 1px solid rgba(255, 255, 255, 0.06);
 }
 
 .weekday {
     text-align: center;
-    font-size: 0.75rem;
-    font-weight: 600;
-    color: #6b7280;
-    padding: 8px;
+    font-size: 0.7rem;
+    font-weight: 500;
+    color: #64748b;
+    padding: 6px;
 }
 
 .weekday.sunday {
@@ -94,31 +93,29 @@
     color: #3b82f6;
 }
 
-/* 달력 그리드 */
 .calendar-grid {
     display: grid;
     grid-template-columns: repeat(7, 1fr);
-    gap: 4px;
-    background: white;
+    gap: 3px;
+    background: #1a1a1a;
     border-radius: 12px;
-    padding: 12px;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+    padding: 10px;
+    border: 1px solid rgba(255, 255, 255, 0.06);
 }
 
 .calendar-day {
     aspect-ratio: 1;
     display: flex;
-    flex-direction: column;
     align-items: center;
-    padding: 8px;
+    justify-content: center;
     border-radius: 8px;
-    background: #f9fafb;
+    background: rgba(255, 255, 255, 0.02);
     cursor: pointer;
-    transition: all 0.2s ease;
+    transition: background 0.2s;
 }
 
 .calendar-day:hover:not(.empty) {
-    background: #e5e7eb;
+    background: rgba(255, 255, 255, 0.08);
 }
 
 .calendar-day.empty {
@@ -127,27 +124,24 @@
 }
 
 .calendar-day.today {
-    background: linear-gradient(135deg, #4f6af5 0%, #6366f1 100%);
+    background: #fff;
 }
 
 .calendar-day.today .day-number {
-    color: white;
-    font-weight: 700;
+    color: #0f0f0f;
+    font-weight: 600;
 }
 
 .day-number {
-    font-size: 0.875rem;
-    font-weight: 500;
-    color: #374151;
+    font-size: 0.8rem;
+    color: #94a3b8;
 }
 
-/* 안내 메시지 */
 .info-banner {
-    background: #fefce8;
-    color: #a16207;
-    padding: 12px 20px;
+    background: rgba(245, 158, 11, 0.1);
+    color: #fbbf24;
+    padding: 10px 16px;
     border-radius: 8px;
     text-align: center;
-    font-size: 0.875rem;
-    border: 1px solid #fde68a;
+    font-size: 0.8rem;
 }

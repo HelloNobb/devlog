@@ -1,38 +1,55 @@
-/* DashboardPage.css - 대시보드 스타일 (밝은 테마) */
+/* Dashboard.css - 사이버펑크 테마 */
 
 .dashboard {
     display: flex;
     flex-direction: column;
-    gap: 24px;
+    gap: 20px;
 }
 
 /* 인사말 카드 */
 .greeting-card {
-    background: white;
+    background: linear-gradient(135deg, rgba(45, 28, 127, 0.4) 0%, rgba(13, 14, 32, 0.9) 100%);
     border-radius: 16px;
-    padding: 32px;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+    padding: 28px;
+    border: 1px solid rgba(117, 70, 232, 0.3);
+    box-shadow: 0 4px 30px rgba(117, 70, 232, 0.15);
+    position: relative;
+    overflow: hidden;
+}
+
+.greeting-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 2px;
+    background: linear-gradient(90deg, transparent, #7546E8, transparent);
 }
 
 .greeting-card h2 {
-    font-size: 1.5rem;
-    font-weight: 700;
-    color: #1f2937;
-    margin: 0 0 8px;
+    font-size: 1.4rem;
+    font-weight: 600;
+    background: linear-gradient(90deg, #C8B3F6 0%, #fff 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    margin: 0 0 6px;
 }
 
 .greeting-card p {
-    color: #6b7280;
-    font-size: 0.95rem;
+    color: #B0A9E5;
+    font-size: 0.9rem;
     margin: 0;
 }
 
 /* 통계 카드 */
 .stats-card {
-    background: white;
+    background: rgba(13, 14, 32, 0.8);
     border-radius: 16px;
     padding: 24px;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+    border: 1px solid rgba(117, 70, 232, 0.2);
+    box-shadow: 0 4px 30px rgba(117, 70, 232, 0.1);
 }
 
 .stats-header {
@@ -43,21 +60,22 @@
 }
 
 .stats-header h3 {
-    font-size: 1.125rem;
-    font-weight: 700;
-    color: #1f2937;
+    font-size: 1rem;
+    font-weight: 600;
+    color: #C8B3F6;
     margin: 0;
 }
 
 .stats-total {
-    color: #6b7280;
-    font-size: 0.875rem;
+    color: #7546E8;
+    font-size: 0.85rem;
+    font-weight: 600;
 }
 
 .stats-list {
     display: flex;
     flex-direction: column;
-    gap: 16px;
+    gap: 14px;
 }
 
 .stat-item {
@@ -70,18 +88,17 @@
 .stat-info {
     display: flex;
     align-items: center;
-    gap: 12px;
-    min-width: 120px;
+    gap: 10px;
+    min-width: 110px;
 }
 
 .stat-icon {
-    font-size: 1.25rem;
+    font-size: 1.1rem;
 }
 
 .stat-name {
-    font-size: 0.9rem;
-    color: #374151;
-    font-weight: 500;
+    font-size: 0.85rem;
+    color: #B0A9E5;
 }
 
 .stat-value {
@@ -92,17 +109,17 @@
 }
 
 .stat-count {
-    min-width: 60px;
+    min-width: 55px;
     text-align: right;
-    font-size: 0.875rem;
+    font-size: 0.85rem;
     font-weight: 600;
-    color: #1f2937;
+    color: #C8B3F6;
 }
 
 .stat-bar {
     flex: 1;
     height: 8px;
-    background: #e5e7eb;
+    background: rgba(45, 28, 127, 0.4);
     border-radius: 4px;
     overflow: hidden;
 }
@@ -110,29 +127,30 @@
 .stat-bar-fill {
     height: 100%;
     border-radius: 4px;
-    transition: width 0.5s ease;
+    transition: width 0.4s ease;
+    box-shadow: 0 0 10px currentColor;
 }
 
 .stat-bar-fill.algo {
-    background: linear-gradient(90deg, #4f6af5, #6366f1);
+    background: linear-gradient(90deg, #7546E8, #C8B3F6);
 }
 
 .stat-bar-fill.project {
-    background: linear-gradient(90deg, #10b981, #059669);
+    background: linear-gradient(90deg, #2D1C7F, #7546E8);
 }
 
 .stat-bar-fill.trouble {
-    background: linear-gradient(90deg, #ef4444, #dc2626);
+    background: linear-gradient(90deg, #7546E8, #B0A9E5);
 }
 
 .stat-bar-fill.cs {
-    background: linear-gradient(90deg, #f59e0b, #d97706);
+    background: linear-gradient(90deg, #C8B3F6, #7546E8);
 }
 
 .loading {
     text-align: center;
     padding: 40px;
-    color: #6b7280;
+    color: #7546E8;
 }
 
 @media (max-width: 768px) {

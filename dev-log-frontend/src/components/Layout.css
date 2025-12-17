@@ -1,15 +1,18 @@
-/* Layout.css - 공통 레이아웃 스타일 */
+/* Layout.css - 사이버펑크 테마 */
 
 .layout {
     min-height: 100vh;
-    background: #f5f7fa;
+    background: #0D0E20;
+    /* Chinese Black */
 }
 
-/* 헤더 */
+/* 헤더 - 네온 퍼플 그라데이션 */
 .layout-header {
-    background: linear-gradient(135deg, #4f6af5 0%, #6366f1 50%, #8b5cf6 100%);
-    padding: 24px 40px;
+    background: linear-gradient(135deg, #0D0E20 0%, #2D1C7F 100%);
+    padding: 20px 40px;
     color: white;
+    border-bottom: 1px solid rgba(117, 70, 232, 0.3);
+    box-shadow: 0 4px 30px rgba(117, 70, 232, 0.2);
 }
 
 .header-content {
@@ -18,62 +21,74 @@
 }
 
 .logo {
-    font-size: 1.75rem;
+    font-size: 1.6rem;
     font-weight: 700;
     margin: 0;
+    background: linear-gradient(90deg, #C8B3F6 0%, #7546E8 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    text-shadow: 0 0 30px rgba(117, 70, 232, 0.5);
 }
 
 .subtitle {
-    font-size: 0.875rem;
-    opacity: 0.9;
-    margin: 4px 0 0;
+    font-size: 0.8rem;
+    margin: 2px 0 0;
+    color: #B0A9E5;
+    font-weight: 400;
 }
 
 /* 탭 네비게이션 */
 .tab-navigation {
     display: flex;
-    background: white;
-    border-bottom: 1px solid #e5e7eb;
+    background: rgba(13, 14, 32, 0.9);
+    border-bottom: 1px solid rgba(117, 70, 232, 0.2);
     padding: 0 40px;
     max-width: 1200px;
     margin: 0 auto;
-    gap: 8px;
+    gap: 0;
 }
 
 .tab-item {
-    padding: 14px 16px;
+    padding: 16px 20px;
     text-decoration: none;
-    color: #6b7280;
+    color: #B0A9E5;
     font-weight: 500;
     font-size: 0.85rem;
-    border-bottom: 3px solid transparent;
-    transition: all 0.2s ease;
+    border-bottom: 2px solid transparent;
+    transition: all 0.3s ease;
     white-space: nowrap;
 }
 
 .tab-item:hover {
-    color: #4f6af5;
+    color: #C8B3F6;
+    text-shadow: 0 0 20px rgba(200, 179, 246, 0.5);
 }
 
 .tab-item.active {
-    color: #4f6af5;
-    border-bottom-color: #4f6af5;
+    color: #C8B3F6;
+    border-bottom-color: #7546E8;
+    text-shadow: 0 0 20px rgba(200, 179, 246, 0.5);
 }
 
 .logout-btn {
     margin-left: auto;
     padding: 8px 16px;
     background: transparent;
-    border: 1px solid #e5e7eb;
+    border: 1px solid rgba(117, 70, 232, 0.4);
     border-radius: 6px;
-    color: #6b7280;
+    color: #B0A9E5;
     font-size: 0.8rem;
     cursor: pointer;
     align-self: center;
+    transition: all 0.3s ease;
 }
 
 .logout-btn:hover {
-    background: #f3f4f6;
+    background: rgba(117, 70, 232, 0.2);
+    border-color: #7546E8;
+    color: #C8B3F6;
+    box-shadow: 0 0 15px rgba(117, 70, 232, 0.3);
 }
 
 /* 메인 콘텐츠 */
@@ -94,8 +109,7 @@
     }
 
     .tab-item {
-        padding: 12px 16px;
-        white-space: nowrap;
+        padding: 14px 16px;
     }
 
     .layout-content {
