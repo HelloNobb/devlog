@@ -164,3 +164,244 @@
         width: 100%;
     }
 }
+
+/* ===== 스티커 메모 섹션 ===== */
+.memo-section {
+    background: rgba(13, 14, 32, 0.8);
+    border-radius: 16px;
+    padding: 24px;
+    border: 1px solid rgba(117, 70, 232, 0.2);
+}
+
+.memo-section h3 {
+    color: #C8B3F6;
+    font-size: 1rem;
+    margin: 0 0 16px;
+}
+
+/* 메모 작성 폼 */
+.memo-form {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+.memo-form textarea {
+    flex: 1;
+    padding: 12px;
+    background: rgba(45, 28, 127, 0.3);
+    border: 1px solid rgba(117, 70, 232, 0.3);
+    border-radius: 8px;
+    color: #C8B3F6;
+    font-family: inherit;
+    resize: none;
+}
+
+.memo-form textarea::placeholder {
+    color: #B0A9E5;
+}
+
+.memo-form textarea:focus {
+    outline: none;
+    border-color: #7546E8;
+}
+
+.memo-form button {
+    padding: 12px 20px;
+    background: linear-gradient(135deg, #7546E8 0%, #2D1C7F 100%);
+    border: none;
+    border-radius: 8px;
+    color: #fff;
+    font-weight: 600;
+    cursor: pointer;
+    white-space: nowrap;
+}
+
+/* 메모 목록 */
+.memo-list {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+/* 메모 카드 */
+.memo-card {
+    background: rgba(45, 28, 127, 0.2);
+    border: 1px solid rgba(117, 70, 232, 0.2);
+    border-radius: 12px;
+    padding: 16px;
+}
+
+.memo-header {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 10px;
+}
+
+.memo-author {
+    color: #7546E8;
+    font-size: 0.8rem;
+    font-weight: 600;
+}
+
+.memo-date {
+    color: #B0A9E5;
+    font-size: 0.75rem;
+}
+
+.memo-content {
+    color: #C8B3F6;
+    font-size: 0.9rem;
+    line-height: 1.6;
+    white-space: pre-wrap;
+}
+
+.memo-actions {
+    display: flex;
+    gap: 8px;
+    margin-top: 10px;
+}
+
+.memo-actions button {
+    padding: 4px 10px;
+    background: rgba(117, 70, 232, 0.2);
+    border: 1px solid rgba(117, 70, 232, 0.3);
+    border-radius: 4px;
+    color: #C8B3F6;
+    font-size: 0.75rem;
+    cursor: pointer;
+}
+
+/* 메모 수정 */
+.memo-edit textarea {
+    width: 100%;
+    padding: 10px;
+    background: rgba(13, 14, 32, 0.8);
+    border: 1px solid rgba(117, 70, 232, 0.4);
+    border-radius: 6px;
+    color: #C8B3F6;
+    font-family: inherit;
+    margin-bottom: 8px;
+    box-sizing: border-box;
+}
+
+.memo-edit-buttons {
+    display: flex;
+    gap: 8px;
+}
+
+.memo-edit-buttons button {
+    padding: 6px 14px;
+    border: none;
+    border-radius: 4px;
+    font-size: 0.8rem;
+    cursor: pointer;
+}
+
+.memo-edit-buttons button:first-child {
+    background: linear-gradient(135deg, #7546E8, #2D1C7F);
+    color: #fff;
+}
+
+.memo-edit-buttons button:last-child {
+    background: rgba(117, 70, 232, 0.2);
+    color: #C8B3F6;
+}
+
+/* 댓글 */
+.memo-comments {
+    margin-top: 12px;
+    padding-top: 12px;
+    border-top: 1px solid rgba(117, 70, 232, 0.15);
+}
+
+.comment {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 6px;
+}
+
+.comment-author {
+    color: #7546E8;
+    font-size: 0.75rem;
+    font-weight: 500;
+}
+
+.comment-content {
+    color: #B0A9E5;
+    font-size: 0.8rem;
+    flex: 1;
+}
+
+.comment-delete {
+    background: none;
+    border: none;
+    color: #7546E8;
+    cursor: pointer;
+    font-size: 1rem;
+    padding: 0 4px;
+}
+
+.comment-form {
+    display: flex;
+    gap: 6px;
+    margin-top: 8px;
+}
+
+.comment-form input {
+    flex: 1;
+    padding: 6px 10px;
+    background: rgba(13, 14, 32, 0.8);
+    border: 1px solid rgba(117, 70, 232, 0.3);
+    border-radius: 4px;
+    color: #C8B3F6;
+    font-size: 0.8rem;
+}
+
+.comment-form input:focus {
+    outline: none;
+    border-color: #7546E8;
+}
+
+.comment-form button {
+    padding: 6px 10px;
+    background: rgba(117, 70, 232, 0.3);
+    border: none;
+    border-radius: 4px;
+    color: #C8B3F6;
+    cursor: pointer;
+}
+
+/* 페이징 */
+.memo-pagination {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 16px;
+    margin-top: 16px;
+}
+
+.memo-pagination button {
+    padding: 8px 16px;
+    background: rgba(45, 28, 127, 0.3);
+    border: none;
+    border-radius: 6px;
+    color: #B0A9E5;
+    cursor: pointer;
+}
+
+.memo-pagination button:hover:not(:disabled) {
+    background: linear-gradient(135deg, #7546E8, #2D1C7F);
+    color: #fff;
+}
+
+.memo-pagination button:disabled {
+    opacity: 0.4;
+    cursor: not-allowed;
+}
+
+.memo-pagination span {
+    color: #C8B3F6;
+    font-size: 0.85rem;
+}

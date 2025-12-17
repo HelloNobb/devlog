@@ -11,6 +11,7 @@ import { CsLogModule } from '../cs-log/cs-log.module';
 import { ProjectModule } from '../project/project.module';
 import { TroubleshootModule } from '../troubleshoot/troubleshoot.module';
 import { SolvedacModule } from '../solvedac/solvedac.module';
+import { MemoModule } from '../memo/memo.module';
 import { User } from '../entities/user.entity';
 
 fetch('http://127.0.0.1:7242/ingest/d0d11f2a-37bf-4c1b-8762-ce966226aadc', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ location: 'app.module.ts:8', message: 'AppModule decorator executing', data: { hasTypeOrmRoot: false, importsCount: 1 }, timestamp: Date.now(), sessionId: 'debug-session', runId: 'run1', hypothesisId: 'D' }) }).catch(() => { });
@@ -42,7 +43,8 @@ fetch('http://127.0.0.1:7242/ingest/d0d11f2a-37bf-4c1b-8762-ce966226aadc', { met
 		CsLogModule,
 		ProjectModule,
 		TroubleshootModule,
-		SolvedacModule,  // solved.ac 프록시 모듈
+		SolvedacModule,
+		MemoModule,  // 스티커 메모 모듈
 	],
 	controllers: [AppController],
 	providers: [AppService],

@@ -1,4 +1,4 @@
-/* Calendar.css - 세련된 다크 테마 */
+/* Calendar.css - 사이버펑크 테마 */
 
 .calendar-container {
     display: flex;
@@ -7,16 +7,16 @@
 }
 
 .calendar-header {
-    background: #1a1a1a;
+    background: rgba(13, 14, 32, 0.8);
     border-radius: 12px;
     padding: 18px 22px;
-    border: 1px solid rgba(255, 255, 255, 0.06);
+    border: 1px solid rgba(117, 70, 232, 0.2);
 }
 
 .calendar-header h1 {
     font-size: 1.1rem;
     font-weight: 600;
-    color: #fff;
+    color: #C8B3F6;
     margin: 0;
 }
 
@@ -25,31 +25,33 @@
     justify-content: center;
     align-items: center;
     gap: 20px;
-    background: #1a1a1a;
+    background: rgba(13, 14, 32, 0.8);
     border-radius: 12px;
     padding: 14px;
-    border: 1px solid rgba(255, 255, 255, 0.06);
+    border: 1px solid rgba(117, 70, 232, 0.2);
 }
 
 .month-navigation button {
     padding: 6px 14px;
-    background: rgba(255, 255, 255, 0.06);
+    background: rgba(45, 28, 127, 0.3);
     border: none;
     border-radius: 6px;
-    color: #94a3b8;
+    color: #B0A9E5;
     font-size: 0.8rem;
     cursor: pointer;
+    transition: all 0.3s ease;
 }
 
 .month-navigation button:hover {
-    background: #fff;
-    color: #0f0f0f;
+    background: linear-gradient(135deg, #7546E8, #2D1C7F);
+    color: #fff;
+    box-shadow: 0 0 15px rgba(117, 70, 232, 0.3);
 }
 
 .month-navigation h2 {
     font-size: 1rem;
     font-weight: 500;
-    color: #fff;
+    color: #C8B3F6;
     margin: 0;
     min-width: 100px;
     text-align: center;
@@ -58,49 +60,50 @@
 .today-button {
     align-self: center;
     padding: 8px 16px;
-    background: #fff;
+    background: linear-gradient(135deg, #7546E8 0%, #2D1C7F 100%);
     border: none;
     border-radius: 6px;
-    color: #0f0f0f;
+    color: #fff;
     font-size: 0.8rem;
     font-weight: 600;
     cursor: pointer;
+    box-shadow: 0 0 15px rgba(117, 70, 232, 0.3);
 }
 
 .weekday-header {
     display: grid;
     grid-template-columns: repeat(7, 1fr);
     gap: 3px;
-    background: #1a1a1a;
+    background: rgba(13, 14, 32, 0.8);
     border-radius: 12px;
     padding: 10px;
-    border: 1px solid rgba(255, 255, 255, 0.06);
+    border: 1px solid rgba(117, 70, 232, 0.2);
 }
 
 .weekday {
     text-align: center;
     font-size: 0.7rem;
     font-weight: 500;
-    color: #64748b;
+    color: #7546E8;
     padding: 6px;
 }
 
 .weekday.sunday {
-    color: #ef4444;
+    color: #C8B3F6;
 }
 
 .weekday.saturday {
-    color: #3b82f6;
+    color: #B0A9E5;
 }
 
 .calendar-grid {
     display: grid;
     grid-template-columns: repeat(7, 1fr);
     gap: 3px;
-    background: #1a1a1a;
+    background: rgba(13, 14, 32, 0.8);
     border-radius: 12px;
     padding: 10px;
-    border: 1px solid rgba(255, 255, 255, 0.06);
+    border: 1px solid rgba(117, 70, 232, 0.2);
 }
 
 .calendar-day {
@@ -109,13 +112,14 @@
     align-items: center;
     justify-content: center;
     border-radius: 8px;
-    background: rgba(255, 255, 255, 0.02);
+    background: rgba(45, 28, 127, 0.15);
     cursor: pointer;
-    transition: background 0.2s;
+    transition: all 0.3s ease;
 }
 
 .calendar-day:hover:not(.empty) {
-    background: rgba(255, 255, 255, 0.08);
+    background: rgba(117, 70, 232, 0.3);
+    box-shadow: 0 0 15px rgba(117, 70, 232, 0.2);
 }
 
 .calendar-day.empty {
@@ -124,24 +128,26 @@
 }
 
 .calendar-day.today {
-    background: #fff;
+    background: linear-gradient(135deg, #7546E8 0%, #2D1C7F 100%);
+    box-shadow: 0 0 20px rgba(117, 70, 232, 0.5);
 }
 
 .calendar-day.today .day-number {
-    color: #0f0f0f;
+    color: #fff;
     font-weight: 600;
 }
 
 .day-number {
     font-size: 0.8rem;
-    color: #94a3b8;
+    color: #B0A9E5;
 }
 
 .info-banner {
-    background: rgba(245, 158, 11, 0.1);
-    color: #fbbf24;
+    background: rgba(117, 70, 232, 0.15);
+    color: #C8B3F6;
     padding: 10px 16px;
     border-radius: 8px;
     text-align: center;
     font-size: 0.8rem;
+    border: 1px solid rgba(117, 70, 232, 0.3);
 }
