@@ -15,10 +15,10 @@ export class CsLogService {
     ) { }
 
     // 1: CREATE
-    async createCsLog(createCsLogDto: CreateCsLogDto, user: User): Promise<CsLog> {
+    async createCsLog(createCsLogDto: CreateCsLogDto, user: any): Promise<CsLog> {
         const newLog = this.csLogRepository.create({
             ...createCsLogDto,
-            user, // 연관관계 설정
+            userId: user.sub, // JWT payload의 sub 필드 (사용자 ID)
         });
         return this.csLogRepository.save(newLog);
     }

@@ -32,7 +32,7 @@ export class AlgoService {
             solvedAt,
             timeSpent,
             problemUrl,
-            userId: user.userId, // userId 설정
+            userId: user.sub, // JWT payload의 sub 필드 (사용자 ID)
         });
         return this.algoRepository.save(newAlgo);
     }
