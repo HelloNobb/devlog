@@ -50,3 +50,16 @@ export class CreateAlgoDto {
     @IsOptional()
     solvedAt?: string;
 }
+
+// 올바른 요청 (모든 값 포함) ====
+// POST /algorithms
+// {
+//   "title": "가장 긴 증가하는 부분 수열",
+//   "platform": "백준",
+//   "difficulty": "Medium",
+//   "tags": ["DP", "이진탐색"],
+//   "approach": "DP 테이블을 만들어서 최장 부분수열 길이 계산",
+//   "memo": "O(n²) 풀이는 느려서 O(nlogn)으로 최적화",
+//   "solvedAt": "2024-12-17T10:30:00Z",
+//   "timeSpent": 45,
+// }
