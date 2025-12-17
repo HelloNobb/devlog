@@ -26,8 +26,12 @@ api.interceptors.response.use(
     (response) => response,
     (error) => { // 401 에러 = 인증 실패 (토큰 만료 등)
         if (error.response?.status === 401) {
-            localStorage.removeItem('token'); // 토큰 삭제
-            window.location.href = '/login'; // 로그인 페이지로 강제이동
+            // 로그인/회원가입 페이지에서는 리다이렉트 안 함
+            const currentPath = window.location.pathname;
+            if (currentPath !== '/login' && currentPath !== '/signup') {
+                localStorage.removeItem('token'); // 토큰 삭제
+                window.location.href = '/login'; // 로그인 페이지로 강제이동
+            }
         }
         return Promise.reject(error); // 에러 전달
     }

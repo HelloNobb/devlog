@@ -1,10 +1,12 @@
 import React, { useState } from 'react';
 import { useNavigate, Link } from 'react-router-dom';
 import { signup as signupApi } from '../api/auth';
+import { useAuth } from '../context/AuthContext'; // 추가
 import '../styles/Auth.css';
 
 const SignupPage = () => {
     const navigate = useNavigate();
+    const { login } = useAuth(); // AuthContext의 login 함수 가져오기
     const [formData, setFormData] = useState({
         email: '',
         password: '',
@@ -33,9 +35,14 @@ const SignupPage = () => {
         setLoading(true);
 
         try {
-            await signupApi(formData.email, formData.password, formData.name);
-            alert('회원가입이 완료되었습니다!');
-            navigate('/login');
+            // 회원가입 API 호출 → accessToken과 user 반환
+            const response = await signupApi(formData.email, formData.password, formData.name);
+
+            // 토큰 저장 → 자동 로그인!
+            login(response.accessToken, response.user);
+
+            // 대시보드로 바로 이동
+            navigate('/');
         } catch (err) {
             setError(err.response?.data?.message || '회원가입에 실패했습니다.');
         } finally {
