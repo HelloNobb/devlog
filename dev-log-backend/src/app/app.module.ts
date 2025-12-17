@@ -10,6 +10,7 @@ import { AlgoModule } from '../algorithms/algo.module';
 import { CsLogModule } from '../cs-log/cs-log.module';
 import { ProjectModule } from '../project/project.module';
 import { TroubleshootModule } from '../troubleshoot/troubleshoot.module';
+import { SolvedacModule } from '../solvedac/solvedac.module';
 import { User } from '../entities/user.entity';
 
 fetch('http://127.0.0.1:7242/ingest/d0d11f2a-37bf-4c1b-8762-ce966226aadc', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ location: 'app.module.ts:8', message: 'AppModule decorator executing', data: { hasTypeOrmRoot: false, importsCount: 1 }, timestamp: Date.now(), sessionId: 'debug-session', runId: 'run1', hypothesisId: 'D' }) }).catch(() => { });
@@ -32,15 +33,16 @@ fetch('http://127.0.0.1:7242/ingest/d0d11f2a-37bf-4c1b-8762-ce966226aadc', { met
 				database: configService.get<string>('DB_DATABASE', 'dev_log'),
 				entities: [User],
 				synchronize: configService.get<string>('NODE_ENV') !== 'production',
-				autoLoadEntities: true, // Entity 자동 로드 (수동 배열 생략 가능)
+				autoLoadEntities: true,
 			}),
 		}),
 		AuthModule,
 		UserModule,
 		AlgoModule,
 		CsLogModule,
-		ProjectModule,       // 프로젝트 모듈 추가
-		TroubleshootModule,  // 트러블슈팅 모듈 추가
+		ProjectModule,
+		TroubleshootModule,
+		SolvedacModule,  // solved.ac 프록시 모듈
 	],
 	controllers: [AppController],
 	providers: [AppService],
