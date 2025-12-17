@@ -13,7 +13,7 @@ import {
 export class CreateAlgoDto {
     @IsString()
     @MaxLength(255)
-    title: string;
+    title: string; //
 
     @IsString()
     @IsOptional()
@@ -21,11 +21,11 @@ export class CreateAlgoDto {
     platform?: string;
 
     @IsEnum(['Easy', 'Medium', 'Hard'])
-    difficulty: string;
+    difficulty: string;//
 
     @IsArray()
     @IsString({ each: true })
-    tags: string[];
+    tags: string[];//
 
     @IsString()
     @IsOptional()

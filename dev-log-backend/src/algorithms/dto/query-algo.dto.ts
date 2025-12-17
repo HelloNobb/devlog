@@ -2,7 +2,7 @@
 import { IsOptional, IsEnum, IsString, IsInt, Min } from 'class-validator';
 import { Type } from 'class-transformer'; // 쿼리 인자를 숫자로 변환
 
-export class QueryAlgorithmDto {
+export class QueryAlgoDto {
     // ========== 검색/필터링 파라미터 ==========
     @IsOptional()
     @IsString()
