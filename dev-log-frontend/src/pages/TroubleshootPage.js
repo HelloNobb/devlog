@@ -11,7 +11,7 @@ const TroubleshootPage = () => {
     const [logs, setLogs] = useState([]);
     const [loading, setLoading] = useState(true);
     const [error, setError] = useState('');
-    const [showForm, setShowForm] = useState(false);
+    const [showForm, setShowForm] = useState(true); // 페이지 진입 시 폼 바로 표시
 
     // ==== 폼 데이터 ====
     const [formData, setFormData] = useState({
@@ -83,9 +83,6 @@ const TroubleshootPage = () => {
         <div className="trouble-container">
             {/* 헤더 */}
             <header className="trouble-header">
-                <button className="back-button" onClick={() => navigate('/')}>
-                    ← 대시보드
-                </button>
                 <h1>🔧 트러블슈팅 기록</h1>
                 <button
                     className="add-button"

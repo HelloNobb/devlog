@@ -11,7 +11,7 @@ const ProjectPage = () => {
     const [logs, setLogs] = useState([]);
     const [loading, setLoading] = useState(true);
     const [error, setError] = useState('');
-    const [showForm, setShowForm] = useState(false);
+    const [showForm, setShowForm] = useState(true); // 페이지 진입 시 폼 바로 표시
 
     // ==== 폼 데이터 ====
     const [formData, setFormData] = useState({
@@ -82,9 +82,6 @@ const ProjectPage = () => {
         <div className="project-container">
             {/* 헤더 */}
             <header className="project-header">
-                <button className="back-button" onClick={() => navigate('/')}>
-                    ← 대시보드
-                </button>
                 <h1>🛠️ 프로젝트 개발 기록</h1>
                 <button
                     className="add-button"

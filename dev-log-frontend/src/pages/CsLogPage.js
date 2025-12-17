@@ -11,7 +11,7 @@ const CsLogPage = () => {
     const [logs, setLogs] = useState([]);           // 기록 목록
     const [loading, setLoading] = useState(true);   // 로딩 상태
     const [error, setError] = useState('');          // 에러 메시지
-    const [showForm, setShowForm] = useState(false); // 작성 폼 표시 여부
+    const [showForm, setShowForm] = useState(true); // 페이지 진입 시 폼 바로 표시
 
     // ==== 새 기록 작성용 폼 데이터 ====
     const [formData, setFormData] = useState({
@@ -88,9 +88,6 @@ const CsLogPage = () => {
         <div className="cslog-container">
             {/* 헤더 */}
             <header className="cslog-header">
-                <button className="back-button" onClick={() => navigate('/')}>
-                    ← 대시보드
-                </button>
                 <h1>📚 CS 학습 기록</h1>
                 <button
                     className="add-button"

@@ -1,38 +1,223 @@
-/* Algorithm.css - 알고리즘 페이지 스타일 */
+/* Algorithm.css - 알고리즘 페이지 (이미지 스타일) */
 
-.algo-container {
-    min-height: 100vh;
-    background: linear-gradient(135deg, #0f0f23 0%, #1a1a2e 100%);
-    color: #ffffff;
-    padding: 24px 40px;
+.algo-page {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
 }
 
-/* ==== 헤더 ==== */
-.algo-header {
+/* 그리드 레이아웃 */
+.algo-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+}
+
+.stats-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+}
+
+@media (max-width: 900px) {
+
+    .algo-grid,
+    .stats-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* 공통 카드 */
+.algo-card {
+    background: white;
+    border-radius: 16px;
+    padding: 24px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+}
+
+.algo-card h3 {
+    font-size: 1rem;
+    font-weight: 700;
+    color: #1f2937;
+    margin: 0 0 16px;
+}
+
+.card-title-row {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin-bottom: 32px;
+    margin-bottom: 16px;
 }
 
-.algo-header h1 {
-    font-size: 1.75rem;
-    font-weight: 700;
+.card-title-row h3 {
+    margin: 0;
 }
 
-/* ==== 작성 폼 ==== */
-.algo-form {
-    background: rgba(255, 255, 255, 0.05);
-    backdrop-filter: blur(10px);
-    border: 1px solid rgba(255, 255, 255, 0.1);
-    border-radius: 16px;
-    padding: 24px;
-    margin-bottom: 32px;
+/* 연동 카드 */
+.connect-card {
+    border: 2px solid #e5e7eb;
+}
+
+.badge {
+    padding: 4px 12px;
+    border-radius: 20px;
+    font-size: 0.75rem;
+    font-weight: 600;
+}
+
+.badge.inactive {
+    background: #f3f4f6;
+    color: #9ca3af;
+}
+
+.badge.active {
+    background: #d1fae5;
+    color: #059669;
+}
+
+.connect-info p {
+    margin: 8px 0;
+    color: #6b7280;
+    font-size: 0.9rem;
+}
+
+.stats-row {
+    display: flex;
+    gap: 24px;
+}
+
+.sync-button {
+    width: 100%;
+    padding: 12px;
+    background: linear-gradient(135deg, #4f6af5 0%, #6366f1 100%);
+    border: none;
+    border-radius: 8px;
+    color: white;
+    font-weight: 600;
+    cursor: pointer;
+    margin-top: 16px;
+}
+
+.sync-button:disabled {
+    background: #e5e7eb;
+    color: #9ca3af;
+    cursor: not-allowed;
+}
+
+/* 문제 리스트 */
+.problem-list {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.problem-item {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 12px;
+    background: #f9fafb;
+    border-radius: 10px;
+}
+
+.problem-icon {
+    font-size: 1.25rem;
+}
+
+.problem-info {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.problem-info strong {
+    font-size: 0.9rem;
+    color: #1f2937;
+}
+
+.problem-info span {
+    font-size: 0.75rem;
+    color: #9ca3af;
+}
+
+.difficulty-badge {
+    padding: 4px 10px;
+    border-radius: 6px;
+    font-size: 0.7rem;
+    font-weight: 600;
+    color: white;
+}
+
+.empty {
+    color: #9ca3af;
+    text-align: center;
+    padding: 20px;
+}
+
+/* 차트 카드 */
+.chart-card h3 {
+    margin-bottom: 20px;
+}
+
+.bar-chart {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.bar-item {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.bar-label {
+    width: 50px;
+    font-size: 0.85rem;
+    font-weight: 500;
+    color: #6b7280;
+}
+
+.bar-track {
+    flex: 1;
+    height: 12px;
+    background: #e5e7eb;
+    border-radius: 6px;
+    overflow: hidden;
+}
+
+.bar-fill {
+    height: 100%;
+    background: linear-gradient(90deg, #4f6af5, #6366f1);
+    border-radius: 6px;
+    transition: width 0.5s ease;
+    min-width: 4px;
+}
+
+.bar-count {
+    width: 30px;
+    text-align: right;
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: #1f2937;
+}
+
+/* 폼 카드 */
+.form-card {
+    border: 2px solid #4f6af5;
+}
+
+.close-btn {
+    background: none;
+    border: none;
+    font-size: 1.25rem;
+    color: #9ca3af;
+    cursor: pointer;
 }
 
 .form-row {
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: repeat(3, 1fr);
     gap: 16px;
     margin-bottom: 16px;
 }
@@ -44,227 +229,70 @@
 }
 
 .form-group {
-    margin-bottom: 16px;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
 }
 
 .form-group label {
-    display: block;
-    color: #94a3b8;
-    font-size: 0.875rem;
+    font-size: 0.8rem;
     font-weight: 500;
-    margin-bottom: 8px;
+    color: #6b7280;
 }
 
 .form-group input,
 .form-group select,
 .form-group textarea {
-    width: 100%;
-    padding: 12px 16px;
-    background: rgba(255, 255, 255, 0.05);
-    border: 1px solid rgba(255, 255, 255, 0.2);
+    padding: 12px;
+    border: 1px solid #e5e7eb;
     border-radius: 8px;
-    color: #ffffff;
-    font-size: 1rem;
+    font-size: 0.9rem;
+    background: #f9fafb;
+    color: #1f2937;
     font-family: inherit;
-    transition: all 0.2s ease;
-    box-sizing: border-box;
 }
 
 .form-group input:focus,
 .form-group select:focus,
 .form-group textarea:focus {
     outline: none;
-    border-color: #6366f1;
-    box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.2);
+    border-color: #4f6af5;
 }
 
-.form-group textarea {
-    resize: vertical;
-    min-height: 80px;
-}
-
-.submit-button {
+.submit-btn {
     width: 100%;
     padding: 14px;
     background: linear-gradient(135deg, #10b981 0%, #059669 100%);
     border: none;
-    border-radius: 12px;
+    border-radius: 8px;
     color: white;
     font-size: 1rem;
     font-weight: 600;
     cursor: pointer;
-    transition: all 0.3s ease;
+    margin-top: 8px;
 }
 
-.submit-button:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 10px 20px rgba(16, 185, 129, 0.3);
-}
-
-/* ==== 기록 목록 ==== */
-.algo-list {
-    display: flex;
-    flex-direction: column;
-    gap: 16px;
-}
-
-.loading,
-.empty-state {
-    text-align: center;
-    padding: 60px 20px;
-    color: #94a3b8;
-}
-
-/* ==== 기록 카드 ==== */
-.algo-card {
-    background: rgba(255, 255, 255, 0.05);
-    backdrop-filter: blur(10px);
-    border: 1px solid rgba(255, 255, 255, 0.1);
-    border-radius: 16px;
-    padding: 20px;
-    transition: all 0.3s ease;
-}
-
-.algo-card:hover {
-    border-color: rgba(99, 102, 241, 0.5);
-    transform: translateY(-2px);
-}
-
-.card-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-bottom: 12px;
-}
-
-.card-badges {
-    display: flex;
-    gap: 8px;
-}
-
-.platform-badge {
-    background: rgba(99, 102, 241, 0.2);
-    color: #818cf8;
-    padding: 4px 12px;
-    border-radius: 20px;
-    font-size: 0.75rem;
-    font-weight: 600;
-}
-
-.difficulty-badge {
-    padding: 4px 12px;
-    border-radius: 20px;
-    font-size: 0.75rem;
-    font-weight: 600;
+/* 플로팅 버튼 */
+.add-float-btn {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    padding: 16px 24px;
+    background: linear-gradient(135deg, #4f6af5 0%, #6366f1 100%);
+    border: none;
+    border-radius: 50px;
     color: white;
-}
-
-.date {
-    color: #94a3b8;
-    font-size: 0.75rem;
-}
-
-.card-title {
-    font-size: 1.125rem;
+    font-size: 1rem;
     font-weight: 600;
-    margin-bottom: 12px;
-    color: #ffffff;
+    cursor: pointer;
+    box-shadow: 0 4px 20px rgba(99, 102, 241, 0.4);
 }
 
-.card-title a {
-    color: #ffffff;
-    text-decoration: none;
-    transition: color 0.2s ease;
-}
-
-.card-title a:hover {
-    color: #818cf8;
-}
-
-.card-tags {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 8px;
-    margin-bottom: 16px;
-}
-
-.tag {
-    background: rgba(139, 92, 246, 0.2);
-    color: #a78bfa;
-    padding: 4px 10px;
-    border-radius: 8px;
-    font-size: 0.75rem;
-    font-weight: 500;
-}
-
-.card-section {
-    margin-bottom: 12px;
-}
-
-.card-section strong {
-    display: block;
-    font-size: 0.75rem;
-    color: #94a3b8;
-    margin-bottom: 4px;
-    text-transform: uppercase;
-    letter-spacing: 0.5px;
-}
-
-.card-section p {
-    color: #cbd5e1;
-    font-size: 0.875rem;
-    line-height: 1.6;
-    white-space: pre-wrap;
-}
-
-.card-actions {
-    display: flex;
-    justify-content: flex-end;
-    gap: 8px;
-    margin-top: 16px;
-    padding-top: 16px;
-    border-top: 1px solid rgba(255, 255, 255, 0.1);
-}
-
-.delete-button {
-    padding: 6px 16px;
-    background: rgba(239, 68, 68, 0.2);
-    border: 1px solid rgba(239, 68, 68, 0.3);
-    border-radius: 8px;
+/* 에러 메시지 */
+.error-msg {
+    background: #fef2f2;
     color: #ef4444;
-    font-size: 0.75rem;
-    cursor: pointer;
-    transition: all 0.2s ease;
-}
-
-.delete-button:hover {
-    background: rgba(239, 68, 68, 0.3);
-}
-
-/* ==== 페이징 ==== */
-.pagination {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 16px;
-    margin-top: 32px;
-}
-
-.pagination button {
-    padding: 10px 20px;
-    background: rgba(255, 255, 255, 0.1);
-    border: 1px solid rgba(255, 255, 255, 0.2);
+    padding: 12px 16px;
     border-radius: 8px;
-    color: #ffffff;
-    cursor: pointer;
-    transition: all 0.2s ease;
-}
-
-.pagination button:hover:not(:disabled) {
-    background: rgba(255, 255, 255, 0.15);
-}
-
-.pagination button:disabled {
-    opacity: 0.5;
-    cursor: not-allowed;
+    border: 1px solid #fecaca;
 }

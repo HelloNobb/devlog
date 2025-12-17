@@ -74,11 +74,7 @@ const CalendarPage = () => {
         <div className="calendar-container">
             {/* 헤더 */}
             <header className="calendar-header">
-                <button className="back-button" onClick={() => navigate('/')}>
-                    ← 대시보드
-                </button>
                 <h1>📅 학습 캘린더</h1>
-                <div></div>
             </header>
 
             {/* 월 네비게이션 */}
