@@ -5,6 +5,7 @@ import { AuthProvider, useAuth } from './context/AuthContext';
 import LoginPage from './pages/LoginPage';
 import SignupPage from './pages/SignupPage';
 import DashboardPage from './pages/DashboardPage';
+import CsLogPage from './pages/CsLogPage'; // CS 학습 페이지 추가
 import './App.css';
 
 // ==== 로그인 필요한 페이지 보호 컴포넌트 ====
@@ -68,16 +69,12 @@ function AppRoutes() {
         }
       />
 
-      {/* 미구현 페이지들 - 임시 라우트 */}
+      {/* CS 학습 페이지 */}
       <Route
         path="/cs-logs"
         element={
           <ProtectedRoute>
-            <div style={{ padding: '40px', color: 'white', background: '#0f0f23', minHeight: '100vh' }}>
-              <h1>📚 CS 학습 페이지</h1>
-              <p>구현 예정</p>
-              <a href="/" style={{ color: '#6366f1' }}>← 대시보드로 돌아가기</a>
-            </div>
+            <CsLogPage />
           </ProtectedRoute>
         }
       />

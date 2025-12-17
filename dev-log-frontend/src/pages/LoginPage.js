@@ -32,10 +32,8 @@ const LoginPage = () => {
         try {
             // 1: 백엔드에 로그인 요청
             const response = await loginApi(formData.email, formData.password);
-
-            // 2: 성공하면 context에 토큰 저장
-            login(response.access_token, response.user);
-
+            // 2: 성공하면 context에 토큰 저장 (백엔드는 accessToken으로 반환)
+            login(response.accessToken, response.user);
             // 3: 대시보드로 이동
             navigate('/');
         } catch (err) {

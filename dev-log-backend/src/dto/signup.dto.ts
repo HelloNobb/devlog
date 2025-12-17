@@ -10,16 +10,11 @@ import {
 export class SignupDto {
 
 	@IsEmail({}, { message: '올바른 이메일 형식이 아닙니다,.' })
-	@IsNotEmpty({ message:'이메일은 필수입니다' })
+	@IsNotEmpty({ message: '이메일은 필수입니다' })
 	email: string;
 
 	@IsString()
-	@MinLength(8, {message:'비밀번호는 최소 8자 이상입니다'})
-	@MaxLength(20, { message: '비밀번호는 최대 20자까지 가능합니다' })
-	@Matches(
-		/^(?=.*[a-zA-Z])(?=.*[0-9!@#$%^&*])/,
-		{ message: '비밀번호는 영문, 숫자, 특수문자 중 2가지 이상 포함해야 합니다' }
-	)
+	@MinLength(1, { message: '비밀번호를 입력해주세요' }) // 개발용: 최소 1자 (배포 시 8자로 변경)
 	@IsNotEmpty({ message: '비밀번호는 필수입니다' })
 	pwd: string;
 

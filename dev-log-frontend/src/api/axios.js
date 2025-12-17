@@ -3,7 +3,7 @@ import axios from 'axios';
 
 // Axios 인스턴스 생성
 const api = axios.create({
-    baseURL: 'http://localhost:3000', // NestJS 백엔드 주소
+    baseURL: 'http://localhost:3001', // NestJS 백엔드 주소 (프론트는 3000, 백엔드는 3001)
     headers: {
         'Content-Type': 'application/json',
     },
