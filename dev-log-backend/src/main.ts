@@ -7,7 +7,7 @@ async function bootstrap() {
 
 	// CORS 설정 - 프론트엔드에서 오는 요청 허용
 	app.enableCors({
-		origin: ['http://localhost:3000', 'http://localhost:3001', 'http://localhost:3002'], // 여러 포트 허용
+		origin: '*', // 여러 포트 허용
 		credentials: true,               // 쿠키/인증 정보 포함 허용
 	});
 
