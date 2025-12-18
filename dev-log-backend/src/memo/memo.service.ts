@@ -26,8 +26,9 @@ export class MemoService {
     }
 
     // 메모 목록 (페이징, 최신순)
-    async findAll(page: number = 1, limit: number = 10) {
+    async findAll(page: number = 1, limit: number = 10, userId: number) {
         const [items, total] = await this.memoRepo.findAndCount({
+            where: { userId },
             order: { createdAt: 'DESC' },
             skip: (page - 1) * limit,
             take: limit,
