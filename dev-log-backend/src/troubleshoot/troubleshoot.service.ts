@@ -24,7 +24,7 @@ export class TroubleshootService {
     }
 
     // READ - 전체 조회 (페이징)
-    async findAllTroubleshoots(queryDto: QueryTroubleshootDto): Promise<{
+    async findAllTroubleshoots(queryDto: QueryTroubleshootDto, userId: number): Promise<{
         items: Troubleshoot[];
         meta: { total: number; page: number; limit: number; totalPages: number };
     }> {
@@ -32,6 +32,7 @@ export class TroubleshootService {
         const skip = (page - 1) * limit;
 
         const [items, total] = await this.troubleshootRepository.findAndCount({
+            where: { userId },
             order: { createdAt: 'DESC' },
             skip,
             take: limit,

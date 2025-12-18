@@ -27,6 +27,7 @@ export const AuthProvider = ({ children }) => {
 
     const logout = () => {
         localStorage.removeItem('token'); //브라우저 토큰 삭제
+        localStorage.removeItem('bojHandle'); //백준 핸들 삭제
         setToken(null);
         setUser(null);
     };

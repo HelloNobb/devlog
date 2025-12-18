@@ -22,12 +22,12 @@ export class AlgoController {
 
     // READ ========
     @Get()
-    async findAllAlgos(@Query() queryDto: QueryAlgoDto):
+    async findAllAlgos(@Query() queryDto: QueryAlgoDto, @Request() req):
         Promise<{
             items: Algorithm[];
             meta: { total: number; page: number; limit: number; totalPages: number }
         }> {
-        return this.algoService.findAllAlgos(queryDto);
+        return this.algoService.findAllAlgos(queryDto, req.user.sub);
     }
 
     @Get(':id')

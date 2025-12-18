@@ -17,8 +17,8 @@ export class CsLogController {
     }
 
     @Get()
-    findAll(@Query() queryDto: QueryCsLogDto): Promise<{ items: CsLog[]; meta: any }> {
-        return this.csLogService.findAllCsLogs(queryDto);
+    findAll(@Query() queryDto: QueryCsLogDto, @Request() req): Promise<{ items: CsLog[]; meta: any }> {
+        return this.csLogService.findAllCsLogs(queryDto, req.user.sub);
     }
 
     @Get(':id')

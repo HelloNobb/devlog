@@ -38,9 +38,12 @@ export class AlgoService {
     }
 
     // 2: READ - 알고리즘 조회 =========
-    async findAllAlgos(queryDto: QueryAlgoDto): Promise<{ items: Algorithm[]; meta: { total: number; page: number; limit: number; totalPages: number } }> {
+    async findAllAlgos(queryDto: QueryAlgoDto, userId: number): Promise<{ items: Algorithm[]; meta: { total: number; page: number; limit: number; totalPages: number } }> {
         const { page = 1, limit = 10, title, difficulty, tag, platform } = queryDto;
         const queryBuilder = this.algoRepository.createQueryBuilder('algo');
+
+        // 사용자 필터링 (필수)
+        queryBuilder.where('algo.userId = :userId', { userId });
 
         // 검색어 필터링
         if (title) {
