@@ -12,6 +12,11 @@
 - **성장 추적**: 학습 진행 상황과 성과를 시각적으로 확인
 - **지식 아카이빙**: CS 지식, 알고리즘, 프로젝트 경험 체계적 정리
 - **커리어 관리**: 이력서 및 포트폴리오 작성을 위한 데이터 축적
+<img width="1391" height="963" alt="스크린샷 2026-02-01 오전 4 39 58" src="https://github.com/user-attachments/assets/1b38e309-498f-4980-b76c-fcba66bdc58a" />
+<img width="1385" height="961" alt="스크린샷 2026-02-01 오전 4 39 39" src="https://github.com/user-attachments/assets/72815b25-374b-4113-b6c6-aa99e398a52b" />
+
+
+
 
 ---
 
