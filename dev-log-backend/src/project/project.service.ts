@@ -24,7 +24,7 @@ export class ProjectService {
     }
 
     // READ - 전체 조회 (페이징)
-    async findAllProjects(queryDto: QueryProjectDto): Promise<{
+    async findAllProjects(queryDto: QueryProjectDto, userId: number): Promise<{
         items: Project[];
         meta: { total: number; page: number; limit: number; totalPages: number };
     }> {
@@ -32,6 +32,7 @@ export class ProjectService {
         const skip = (page - 1) * limit;
 
         const [items, total] = await this.projectRepository.findAndCount({
+            where: { userId },
             order: { createdAt: 'DESC' },
             skip,
             take: limit,

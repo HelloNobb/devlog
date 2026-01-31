@@ -24,9 +24,12 @@ export class CsLogService {
     }
 
     // 2: READ (Pagination)
-    async findAllCsLogs(queryDto: QueryCsLogDto): Promise<{ items: CsLog[]; meta: { total: number; page: number; limit: number; totalPages: number } }> {
+    async findAllCsLogs(queryDto: QueryCsLogDto, userId: number): Promise<{ items: CsLog[]; meta: { total: number; page: number; limit: number; totalPages: number } }> {
         const { page = 1, limit = 10, category, topic } = queryDto;
         const queryBuilder = this.csLogRepository.createQueryBuilder('cs_log');
+
+        // 사용자 필터링 (필수)
+        queryBuilder.where('cs_log.userId = :userId', { userId });
 
         // 필터링
         if (category) {

@@ -18,8 +18,8 @@ export class TroubleshootController {
     }
 
     @Get()
-    findAll(@Query() queryDto: QueryTroubleshootDto): Promise<{ items: Troubleshoot[]; meta: any }> {
-        return this.troubleshootService.findAllTroubleshoots(queryDto);
+    findAll(@Query() queryDto: QueryTroubleshootDto, @Request() req): Promise<{ items: Troubleshoot[]; meta: any }> {
+        return this.troubleshootService.findAllTroubleshoots(queryDto, req.user.sub);
     }
 
     @Get(':id')

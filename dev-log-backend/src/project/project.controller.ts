@@ -18,8 +18,8 @@ export class ProjectController {
     }
 
     @Get()
-    findAll(@Query() queryDto: QueryProjectDto): Promise<{ items: Project[]; meta: any }> {
-        return this.projectService.findAllProjects(queryDto);
+    findAll(@Query() queryDto: QueryProjectDto, @Request() req): Promise<{ items: Project[]; meta: any }> {
+        return this.projectService.findAllProjects(queryDto, req.user.sub);
     }
 
     @Get(':id')

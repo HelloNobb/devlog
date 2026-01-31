@@ -19,8 +19,8 @@ export class MemoController {
 
     // 메모 목록 (페이징)
     @Get()
-    findAll(@Query('page') page: string = '1', @Query('limit') limit: string = '10') {
-        return this.memoService.findAll(+page, +limit);
+    findAll(@Query('page') page: string = '1', @Query('limit') limit: string = '10', @Request() req) {
+        return this.memoService.findAll(+page, +limit, req.user.sub);
     }
 
     // 메모 상세
